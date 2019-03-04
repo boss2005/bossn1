@@ -27,7 +27,7 @@ const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const sql = require("sqlite");
 const dateFormat = require('dateformat'); 
 const pretty = require('pretty-ms') 
-const prefix = 'a';
+const prefix = '+';
 var table = require('table').table
 var ti={}  
 ,spee={}
@@ -80,8 +80,6 @@ ${prefix}support/سيرفر الدعم
 ${prefix}credits/ معرف عداد كريدت الى معاك
 ${prefix}daily/ الى خد رتب اليومه
 **
-  `
-,`
         ***__Administrative Orders__***
 **
 ${prefix}move @user /  لسحب الشخص الى روومك
@@ -113,7 +111,6 @@ ${prefix}make <number> / ينشا لك الوان مع كم الوان تبي
 ${prefix}color <number> / لختيار لون
 ${prefix}deletecolors <number> / لحذف الالوان
 **
-   `,`
         ***__Music orders__***
 **
 ${prefix}play / لتشغيل أغنية برآبط أو بأسم
@@ -195,7 +192,7 @@ client.on('message',async message => {
     
 if(message.author.bot) return;
 if(!credits[message.author.id]) credits[message.author.id] = {
-    credits: 9999999999999999999999999999
+    credits: 60
 };
 
 let userData = credits[message.author.id];
@@ -284,7 +281,7 @@ client.on('message', function(msg) {
             .setAuthor(client.user.username,client.user.avatarURL)
             .setThumbnail(client.user.avatarURL)
             .setColor('RANDOM')
-            .setTitle('``INFO 3bker Community ©`` ')
+            .setTitle('``INFO q-bot Community ©`` ')
             .addField('``My Ping``' , [`${Date.now() - message.createdTimestamp}` + 'MS'], true)
             .addField('``RAM Usage``', `[${(process.memoryUsage().rss / 1048576).toFixed()}MB]`, true)
             .addField('``servers``', [client.guilds.size], true)
@@ -294,7 +291,7 @@ client.on('message', function(msg) {
             .addField('``My ID``' , `[ ${client.user.id} ]` , true)
 			      .addField('``My Prefix``' , `[ ! ]` , true)
 			      .addField('``My Language``' , `[ Java Script ]` , true)
-			      .setFooter('By | 3bker')
+			      .setFooter('By |Boss')
     })
 }
 });

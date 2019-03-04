@@ -35,7 +35,7 @@ var ti={}
 
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = ['ahelp','Type ahelp'];
+    var setGame = ['_help','Type _help'];
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -67,24 +67,13 @@ ${prefix}server/يعرض لك معلومات عن السيرفر
 ${prefix}bot/يعرض لك كل معلومات البوت
 ${prefix}count/يعرض لك عدد الاشخاص بالسيرفر بدون بوتات
 ${prefix}invites/ يعرض لك  عدد انفايتاتك بالسيرفر 
-${prefix}invinfo <invitelink here> / لمعلومات عن الدعوه
- مثال : invinfo m82n8P
-${prefix}invite-codes/يعرض لك روابط الانفايتات حكك في السيرفر 
-${prefix}cal/اله حاسبة
-${prefix}trans <language> <any thing>/يترجم لك الي تبيه من اي لغة
-${prefix}short/يختصر لك رابط كبير الى رابط صغير
 ${prefix}tag/يكتب لك الكلمة بشكل جميل وكبير
 ${prefix}google/للبحث في قوقل عن طريق الدسكورد
-${prefix}perms/يعرض لك برمشناتك بالسيرفر
-${prefix}z5rf/يزخرف لك كلمة او جملة
+${prefix}perms/يعرض لك برمشناتك بالسيرفراو
 ${prefix}rooms/يعرض لك كل الرومات الي بالسيرفر مع عددها
 ${prefix}roles/يعرض لك كل الرانكات بالسيرفر بشكل جميل
-${prefix}emojilist/يعرض لك كل الايموجيات الي بالسيرفر
-${prefix}say/يكرر الكلام الي تكتبو
-${prefix}image/صورة السيرفر
 ${prefix}members/عرض لك عدد كل حالات الاشخاص وعدد البوتات وعدد الاشخاص
-${prefix}id/معلومات عنك
-${prefix}bans / عدد الاشخاص المبندة 
+${prefix}id/معلومات عنك  
 ${prefix}avatar/صورتك او صورة الي تمنشنو
 ${prefix}embed/يكرر الي تقولو بشكل حلو
 ${prefix}emoji <any things>/لتحويل اي كلمه تقولها الي ايموجي
@@ -92,11 +81,7 @@ ${prefix}inv/لدعوة البوت الى سيرفرك
 ${prefix}support/سيرفر الدعم
 ${prefix}credits/ معرف عداد كريدت الى معاك
 ${prefix}daily/ الى خد رتب اليومه
-**
-  `
-,`
         ***__Administrative Orders__***
-**
 ${prefix}move @user /  لسحب الشخص الى روومك
 ${prefix}bc / رسالة جماعية الى كل اعضاء السيرفر
 ${prefix}bk / رسالة جماعيه مع
@@ -125,10 +110,7 @@ ${prefix}delet <name> / مسح الشات او الرووم فويس
 ${prefix}make <number> / ينشا لك الوان مع كم الوان تبي
 ${prefix}color <number> / لختيار لون
 ${prefix}deletecolors <number> / لحذف الالوان
-**
-   `,`
         ***__Music orders__***
-**
 ${prefix}play / لتشغيل أغنية برآبط أو بأسم
 ${prefix}skip / لتجآوز الأغنية الحآلية
 ${prefix}pause / إيقآف الأغنية مؤقتا
@@ -137,9 +119,7 @@ ${prefix}vol / لتغيير درجة الصوت 100 - 0
 ${prefix}stop / لإخرآج البوت من الروم
 ${prefix}np / لمعرفة الأغنية المشغلة حآليا
 ${prefix}queue / لمعرفة قآئمة التشغيل
-**
         ***__Games orders__***
- **       
 ${prefix}rps / حجر ورقة مقص
 ${prefix}speed / اسرع كتابة
 ${prefix}quas / اسئلة عامة
@@ -159,17 +139,12 @@ ${prefix}voiceonline / لتفعيل روم الفويس اونلاين
 **
    
 `]
-    let page = 1;
 
-    let embed = new Discord.RichEmbed()
+   
     .setColor('RANDOM')
     .setFooter(`Page ${page} of ${pages.length}`)
-    .setDescription(pages[page-1])
-
-    message.author.sendEmbed(embed).then(msg => {
-
-        msg.react('⏮').then( r => {
-            msg.react('⏭')
+    .setDescription(pages[page-1]
+      
 
 
         const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏮' && user.id === message.author.id;
@@ -190,17 +165,9 @@ ${prefix}voiceonline / لتفعيل روم الفويس اونلاين
         })
         forwards.on('collect', r => {
             if (page === pages.length) return;
-      
-      page++;
-            embed.setDescription(pages[page-1]);
-            embed.setFooter(`Page ${page} of ${pages.length}`);
-            msg.edit(embed)
-        })
-        })
-    })
-    }
-}); 
-
+});
+	
+		
 const credits = JSON.parse(fs.readFileSync("./creditsCode.json", "utf8"));
 const coolDown = new Set();
 
@@ -208,7 +175,7 @@ client.on('message',async message => {
     
 if(message.author.bot) return;
 if(!credits[message.author.id]) credits[message.author.id] = {
-    credits: 50
+    credits: 99999999999999999999999999999999999999999999999999999999999999999999999999999999
 };
 
 let userData = credits[message.author.id];
@@ -227,7 +194,7 @@ message.channel.send(`**${message.author.username}, your :credit_card: balance i
 });
 
 client.on('message', async message => {
-    let amount = 250;
+    let amount = 310;
     if(message.content.startsWith(prefix + "daily")) {
     if(message.author.bot) return;
     if(coolDown.has(message.author.id)) return message.channel.send(`**:stopwatch: | ${message.author.username}, your daily :yen: credits refreshes in \`\`1 Day\`\`.**`);

@@ -27,7 +27,7 @@ const youtube = new YouTube("AIzaSyAdORXg7UZUo7sePv97JyoDqtQVi3Ll0b8");
 const sql = require("sqlite");
 const dateFormat = require('dateformat'); 
 const pretty = require('pretty-ms') 
-const prefix = '_';
+const prefix = ':';
 var table = require('table').table
 var ti={}  
 ,spee={}
@@ -35,7 +35,7 @@ var ti={}
 
 client.on('ready', function(){
     var ms = 60000 ;
-    var setGame = ['_help','Type _help'];
+    var setGame = [':help beta version!!','Type :help beta version!!',' by:boss beta version!!','by:Nov beta version!!','Iam using beta version!!','Coming Soon.']		
     var i = -1;
     var j = 0;
     setInterval(function (){
@@ -60,8 +60,14 @@ client.on('ready', function(){
 client.on('message', message => {
 if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
     let pages = [`**
+  ____                           
+ |  _ \ _ __ ___  __ _ _ __ ___  
+ | | | | '__/ _ \/ _` | '_ ` _ \ 
+ | |_| | | |  __/ (_| | | | | | |
+ |____/|_|  \___|\__,_|_| |_| |_|
+
+		   
         ***__General orders__***
-**
 ${prefix}allbots/لعرض جميع البوتات الي بالسيرفر
 ${prefix}server/يعرض لك معلومات عن السيرفر
 ${prefix}bot/يعرض لك كل معلومات البوت

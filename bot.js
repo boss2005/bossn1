@@ -60,12 +60,6 @@ client.on('ready', function(){
 client.on('message', message => {
 if (message.content.startsWith(prefix + 'help')) { /// This is The DMS Code Send The Help In DMS // Code By NotGucci
     let pages = [`**
-  ____                           
- |  _ \ _ __ ___  __ _ _ __ ___  
- | | | | '__/ _ \/ _` | '_ ` _ \ 
- | |_| | | |  __/ (_| | | | | | |
- |____/|_|  \___|\__,_|_| |_| |_|
-
 		   
         ***__General orders__***
 ${prefix}allbots/لعرض جميع البوتات الي بالسيرفر
